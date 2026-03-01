@@ -4,6 +4,14 @@
 
 ## 📚 技能列表
 
+### [openclaw-config](./openclaw-config/)
+
+Manage OpenClaw multi-agent configuration, bindings, and routing. Use when the user wants to configure multiple agents, set up message routing, add bindings for different channels/accounts, list current configuration, or troubleshoot agent routing issues. Handles the correct configuration of agents.list and bindings fields.
+
+### [skill-publisher](./skill-publisher/)
+
+Publish and share OpenClaw skills to GitHub repositories. Use when the user wants to share skills, create a skills collection repository, add skills to an existing repository, or manage skill sharing workflows. Automates repository creation, skill addition, README updates, and git operations.
+
 ### [agent-creator](./agent-creator/)
 
 创建和配置新的 OpenClaw agents，支持 Telegram bot 集成。
