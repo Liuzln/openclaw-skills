@@ -17,6 +17,15 @@ python3 scripts/backup.py
 
 Creates a timestamped backup in `~/.openclaw/backups/`
 
+### Push to GitHub (recommended)
+
+```bash
+cd ~/.openclaw/backups
+git add *.tar.gz
+git commit -m "备份：$(date +%Y-%m-%d)"
+git push
+```
+
 ### List backups
 
 ```bash
@@ -87,6 +96,42 @@ python3 scripts/restore.py ~/.openclaw/backups/openclaw-backup-20260301-153000.t
 - Creates backup of current config (`openclaw.json.before-restore`)
 - Shows what will be restored
 
+## GitHub Integration
+
+### Setup (one-time)
+
+Create a private GitHub repository for backups:
+
+```bash
+cd ~/.openclaw/backups
+git init
+gh repo create openclaw-backups --private --description "OpenClaw 配置备份（私密）" --source=. --remote=origin --push
+```
+
+### Backup workflow with GitHub
+
+```bash
+# 1. Create backup
+python3 scripts/backup.py --name "before-update"
+
+# 2. Push to GitHub
+cd ~/.openclaw/backups
+git add *.tar.gz
+git commit -m "备份：$(date +%Y-%m-%d) - before-update"
+git push
+```
+
+### Restore from GitHub
+
+```bash
+# 1. Pull latest backups
+cd ~/.openclaw/backups
+git pull
+
+# 2. Restore
+python3 scripts/restore.py ~/.openclaw/backups/<backup-file>.tar.gz
+```
+
 ## Common Workflows
 
 ### Before making major changes
@@ -94,6 +139,9 @@ python3 scripts/restore.py ~/.openclaw/backups/openclaw-backup-20260301-153000.t
 ```bash
 # Create a backup
 python3 scripts/backup.py --name "before-agent-changes"
+
+# Push to GitHub (recommended)
+cd ~/.openclaw/backups && git add *.tar.gz && git commit -m "Before agent changes" && git push
 
 # Make your changes
 # ...
