@@ -4,6 +4,22 @@
 
 ## 📚 技能列表
 
+### [x-tweet-fetcher](./x-tweet-fetcher/)
+
+Fetch and save X (Twitter) tweets with full content, screenshots, and JSON export. Supports single tweets, user timelines, and automatic screenshot capture. Use when you need to archive, save, or analyze X tweets.
+
+### [vercel-deploy](./vercel-deploy/)
+
+Deploy applications and websites to Vercel. Use this skill when the user requests deployment actions such as "Deploy my app", "Deploy this to production", "Create a preview deployment", "Deploy and give me the link", or "Push this live". No authentication required - returns preview URL and claimable deployment link.
+
+### [openclaw-cron](./openclaw-cron/)
+
+Manage OpenClaw cron jobs safely without editing config files. Use when the user wants to create scheduled tasks, list cron jobs, enable/disable tasks, run tasks immediately for testing, or view cron job history. Provides safe wrappers around openclaw cron CLI commands with templates and best practices.
+
+### [openclaw-backup](./openclaw-backup/)
+
+Backup and restore OpenClaw configuration and important data. Use when the user wants to create a backup before making changes, restore from a previous backup, list available backups, or protect their OpenClaw setup. Backs up openclaw.json, agents configuration, workspace files, memory, and custom skills.
+
 ### [openclaw-config](./openclaw-config/)
 
 Manage OpenClaw multi-agent configuration, bindings, and routing. Use when the user wants to configure multiple agents, set up message routing, add bindings for different channels/accounts, list current configuration, or troubleshoot agent routing issues. Handles the correct configuration of agents.list and bindings fields.
